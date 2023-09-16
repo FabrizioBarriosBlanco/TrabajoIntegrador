@@ -51,8 +51,8 @@ def move():
     clear()
 
     for body in snake:
-      square(body.x, body.y, 9, snake_color)
-    square(food.x, food.y, 9, food_color)
+      square(body.x, body.y, 9, snake_color) #En vez de seleccionar un color fijo, trae esa variable aleatoria
+    square(food.x, food.y, 9, food_color) #En vez de seleccionar un color fijo, trae esa variable aleatoria
     update()
     ontimer(move, 100)
 
