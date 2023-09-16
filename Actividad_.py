@@ -1,6 +1,5 @@
 from random import randrange
 from turtle import *
-
 from freegames import vector
 
 ball = vector(-200, -200)
@@ -46,7 +45,7 @@ def move():
         targets.append(target)
 
     for target in targets:
-        target.x -= 0.5
+        target.x -= 3  # Aumenta la velocidad de movimiento de los objetivos
 
     if inside(ball):
         speed.y -= 0.35
@@ -67,7 +66,7 @@ def move():
 
     for target in targets:
         if not inside(target):
-            return
+            target.x = 200  # Reposiciona el objetivo en el lado derecho
 
     ontimer(move, 50)
 
