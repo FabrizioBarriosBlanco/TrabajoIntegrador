@@ -19,7 +19,7 @@ tiles = list(["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q
 #changed from numbers to letters
 state = {'mark': None}
 hide = [True] * 64
-
+Ntap = 0  # created Ntap for the number of taps made
 
 def square(x, y):
     """Draw white square with black outline at (x, y)."""
@@ -48,6 +48,10 @@ def tap(x, y):
     """Update mark and hidden tiles based on tap."""
     spot = index(x, y)
     mark = state['mark']
+
+    #took the global variable and increased it every time there is a tap
+    global Ntap
+    Ntap=Ntap+1
 
     if mark is None or mark == spot or tiles[mark] != tiles[spot]:
         state['mark'] = spot
