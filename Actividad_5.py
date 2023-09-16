@@ -87,7 +87,7 @@ def draw():
         goto(x + 2, y)
         color('black')
         write("taps=" + str(Ntap), align='left', font=('Comic Sans MS', 10, 'normal'))
-        write(tiles[mark], font=('Comic Sans MS', 30, 'normal'))
+        write( tiles[mark], font=('Comic Sans MS', 30, 'normal'))
 
     update()
     ontimer(draw, 100)
