@@ -34,6 +34,23 @@ def move():
     head = snake[-1].copy()
     head.move(aim)
 
+    #create a random direction for the food to move
+    faim = randrange(1,4)
+    if faim == 1:
+        Faim = 'Right'
+    elif faim == 2:
+        Faim = 'Left'
+    elif faim == 3:
+        Faim = 'Up'
+    else:
+        Faim = 'Down'
+    food.move(Faim)
+
+    #if the food goes outside it will respawn inside
+    if not inside(food):
+        food.x = randrange(-15, 15) * 10
+        food.y = randrange(-15, 15) * 10
+
     if not inside(head) or head in snake:
         square(head.x, head.y, 9, 'red')
         update()
@@ -56,7 +73,6 @@ def move():
     square(food.x, food.y, 9, 'green')
     update()
     ontimer(move, 100)
-
 
 setup(420, 420, 370, 0)
 hideturtle()
