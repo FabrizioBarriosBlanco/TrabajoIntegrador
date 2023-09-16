@@ -8,3 +8,7 @@ Se añadio un codigo para que los fantasmas hagan movimiento mas inteligentes, s
 Actividad_4
 Se sumento la velocidad del proyectil y de lo balones; y se agrego continuidad al juego para que no termine pasado un tiempo.
 Actividad_5
+Contar y desplegar el numero de taps
+Detectar cuando todos los cuadros se han destapado
+Central el dígito en el cuadro
+Cambiar numeros a letras
