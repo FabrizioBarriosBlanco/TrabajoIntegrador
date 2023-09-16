@@ -8,7 +8,7 @@ Exercises:
 4. Center single-digit tile.
 5. Use letters instead of tiles.
 """
-
+import turtle
 from random import *
 from turtle import *
 
@@ -80,7 +80,8 @@ def draw():
         up()
         goto(x + 2, y)
         color('black')
-        write(tiles[mark], font=('Arial', 30, 'normal'))
+        write("taps=" + str(Ntap), align='left', font=('Comic Sans MS', 10, 'normal'))
+        write(tiles[mark], font=('Comic Sans MS', 30, 'normal'))
 
     update()
     ontimer(draw, 100)
