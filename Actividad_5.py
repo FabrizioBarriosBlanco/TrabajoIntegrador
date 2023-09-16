@@ -15,11 +15,12 @@ from turtle import *
 from freegames import path
 
 car = path('car.gif')
-tiles = list(["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","/",":","=","~","[]",":p"])*2
+tiles = list([" a"," b"," c"," d"," e"," f"," g"," h"," i"," j"," k"," l"," m"," n"," o"," p"," q"," r"," s"," t"," u"," v"," w"," x"," y"," z"," /"," :"," ="," ~"," []"," :p"])*2
 #changed from numbers to letters
 state = {'mark': None}
 hide = [True] * 64
 Ntap = 0  # created Ntap for the number of taps made
+Succesful_taps = 0 #Created a variable to hold how many tiles have been completed
 
 def square(x, y):
     """Draw white square with black outline at (x, y)."""
@@ -52,14 +53,19 @@ def tap(x, y):
     #took the global variable and increased it every time there is a tap
     global Ntap
     Ntap=Ntap+1
-
+    global Succesful_taps
+    
     if mark is None or mark == spot or tiles[mark] != tiles[spot]:
         state['mark'] = spot
     else:
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
-
+        Succesful_taps += 2
+        if Succesful_taps == 64:
+            goto(0,0)
+            style ('white') 
+            write ("CONGRATULATIONS, YOU WON!", align="center", font=("Comic Sans MS", 30, "normal"))
 
 def draw():
     """Draw image and tiles."""
