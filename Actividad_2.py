@@ -37,13 +37,13 @@ def move():
     #create a random direction for the food to move
     faim = randrange(1,4)
     if faim == 1:
-        Faim = 'Right'
+        Faim = vector(10, 0)
     elif faim == 2:
-        Faim = 'Left'
+        Faim = vector(-10, 0)
     elif faim == 3:
-        Faim = 'Up'
+        Faim = vector(0, 10)
     else:
-        Faim = 'Down'
+        Faim = vector(0, -10)
     food.move(Faim)
 
     #if the food goes outside it will respawn inside
