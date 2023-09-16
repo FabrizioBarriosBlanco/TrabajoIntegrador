@@ -15,7 +15,8 @@ from turtle import *
 from freegames import path
 
 car = path('car.gif')
-tiles = list(range(32)) * 2
+tiles = list(["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","/",":","=","~","[]",":p"])*2
+#changed from numbers to letters
 state = {'mark': None}
 hide = [True] * 64
 
